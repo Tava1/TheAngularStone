@@ -36,7 +36,7 @@ public class TheAngularStone {
 			CreditosDesenvolvimento();
 			break;
 		case 5:
-			System.out.println("Ate a proxima");
+			System.out.println("Ate a proxima.");
 			
 			break;
 		}
@@ -106,60 +106,6 @@ public class TheAngularStone {
 									System.out.println("NPC SAI");
 
 									SegundaParteJogo();
-
-									/*
-									// DESAFIO 4
-									AdicionarPerguntas(5);
-									ArrayList<String> desafio4 = new ArrayList<String>();
-									desafio4 = GeraAlternativas("O dos trabalhadores de primeira linha, que são os que coordenam o trabalho operacional.", "O dos trabalhadores de primeira linha, que são os que ocupam posição intermediária na hierarquia empresarial.", "O dos chefes e supervisores, que são os responsáveis pela administração global.", "O gerencial, que na hierarquia, supervisionam os trabalhadores em posição estratégica.");
-									ImprimeAlternativas(desafio4);
-
-									respostaJogador = scanner.next();
-									if(ValidaResposta("O dos trabalhadores de primeira linha, que são os que coordenam o trabalho operacional.", respostaJogador, desafio4) == true) {
-
-										// DESAFIO 5
-										AdicionarPerguntas(6);
-										ArrayList<String> desafio5 = new ArrayList<String>();
-										desafio5 = GeraAlternativas("Administração Científica", "Teoria Clássica","Teoria do Planejamento","Princípios da ciência do trabalho");
-										ImprimeAlternativas(desafio5);
-
-										respostaJogador = scanner.next();
-										if(ValidaResposta("Administração Científica", respostaJogador, desafio5) == true) {
-
-											// SEGUNDO NPC
-											ImprimirMensagem(5);
-
-											// DESAFIO 6
-											AdicionarPerguntas(7);
-											ArrayList<String> desafio6 = new ArrayList<String>();
-											desafio6 = GeraAlternativas("Intensificação, economicidade e eficiência.","Controle, execução e hierarquia.","Intensificação, economicidade e produtividade.","Intensificação, just in time e produtividade.");
-											ImprimeAlternativas(desafio6);
-
-											respostaJogador = scanner.next();
-											if(ValidaResposta("Intensificação, economicidade e produtividade.", respostaJogador, desafio6) == true) {
-
-												// DESAFIO 7
-												AdicionarPerguntas(8);
-												ArrayList<String> desafio7 = new ArrayList<String>();
-												desafio7 = GeraAlternativas("Busca eficiência e eficácia como objetivo principal.","Busca a eficácia através dos serviços sociais.","Busca a eficiência no serviço público.","Busca eficiência e eficácia como objetivo a mais dos serviços.");
-												ImprimeAlternativas(desafio7);
-
-												respostaJogador = scanner.next();
-												if(ValidaResposta("Busca eficiência e eficácia como objetivo principal.", respostaJogador, desafio7) == true) {
-													// FIM
-													ImprimirMensagem(6);
-												}
-												else {
-												}
-												}
-											else {
-											}
-										}
-										else {
-										}
-									}
-									else {
-									}*/
 								}
 								else {
 								}
@@ -451,7 +397,6 @@ public class TheAngularStone {
 			respostas.add(alternativasLetras[j] + alternativasPreenchida[j]);
 		}
 
-
 		return respostas;
 	}
 
@@ -506,6 +451,11 @@ public class TheAngularStone {
 	}
 
 	public static void CreditosDesenvolvimento(){
-		System.out.println("Direcao ...");
+		System.out.println("\nProjeto Integrador I: Desenvolvimento de Logica." +
+				"\n\nThe Angular Stone" +
+				"\n\nDesenvolvimento: " +
+				"\nGustavo C. Z. Santos." +
+				"\nVictor Hugo Pedrasani." +
+				"\nGabriel de Souza.");
 	}
 }
