@@ -75,9 +75,11 @@ public class TheAngularStone {
             ImprimeAlternativas(desafio1);
 
             respostaJogador = scanner.next().charAt(0);
-            /* Cada if(ValidaResposta "alternativa certa", 'palpite do usuario', ArrayList com todas as alternativas),
-            se retorno == true prosegue os desafios, caso false e decrementado 1 na variavel que e responsalvel por contabilizar as tentativas. */
-            if (ValidaResposta("Sociedade", respostaJogador, desafio1) == true) {
+            /*
+            Cada if(ValidaResposta "alternativa certa", 'palpite do usuario', ArrayList com todas as alternativas),
+            caso retorno true prosseguirá os desafios, caso contrário será decrementado 1 na variável que contabiliza as tentativas.
+            */
+            if (ValidaResposta("Sociedade", respostaJogador, desafio1)) {
                 // PRIMEIRO NPC APARECE
                 ImprimirMensagem(3);
                 char decisaoNPC = scanner.next().charAt(0);
@@ -97,7 +99,7 @@ public class TheAngularStone {
 
                             respostaJogador = scanner.next().charAt(0);
                             respostaJogador = Character.toLowerCase(respostaJogador);
-                            if (ValidaResposta("Fazer a coisa certa, fator qualitativo.", respostaJogador, desafio2) == true) {
+                            if (ValidaResposta("Fazer a coisa certa, fator qualitativo.", respostaJogador, desafio2)) {
                                 // DECISAO DE PERMANENCIA DO NPC
                                 ImprimirMensagem(4);
                                 decisaoNPC = scanner.next().charAt(0);
@@ -118,7 +120,7 @@ public class TheAngularStone {
 
                                             respostaJogador = scanner.next().charAt(0);
                                             respostaJogador = Character.toLowerCase(respostaJogador);
-                                            if (ValidaResposta("Planejamento, organização, direção, controle.", respostaJogador, desafio3) == true) {
+                                            if (ValidaResposta("Planejamento, organização, direção, controle.", respostaJogador, desafio3)) {
                                                 System.out.println("NPC SAI");
                                                 SegundaParteJogo(); // Chama a segunda parte do jogo que contem os proximos desafios.
                                             } else {
@@ -151,7 +153,7 @@ public class TheAngularStone {
 
                                             respostaJogador = scanner.next().charAt(0);
                                             respostaJogador = Character.toLowerCase(respostaJogador);
-                                            if (ValidaResposta("Planejamento, organização, direção, controle.", respostaJogador, desafio3False) == true) {
+                                            if (ValidaResposta("Planejamento, organização, direção, controle.", respostaJogador, desafio3False)) {
                                                 SegundaParteJogo(); // Chama a segunda parte do jogo que contem os proximos desafios.
                                             } else {
                                                 tentativasDesafio3False--;
@@ -194,7 +196,7 @@ public class TheAngularStone {
 
                             respostaJogador = scanner.next().charAt(0);
                             respostaJogador = Character.toLowerCase(respostaJogador);
-                            if (ValidaResposta("Fazer a coisa certa, fator qualitativo.", respostaJogador, desafio2False) == true) {
+                            if (ValidaResposta("Fazer a coisa certa, fator qualitativo.", respostaJogador, desafio2False)) {
                                 int tentativasDesafio3False = 3;
 
                                 while (tentativasDesafio3False > 0) {
@@ -208,7 +210,7 @@ public class TheAngularStone {
 
                                     respostaJogador = scanner.next().charAt(0);
                                     respostaJogador = Character.toLowerCase(respostaJogador);
-                                    if (ValidaResposta("Planejamento, organização, direção, controle.", respostaJogador, desafio3False) == true) {
+                                    if (ValidaResposta("Planejamento, organização, direção, controle.", respostaJogador, desafio3False)) {
                                         SegundaParteJogo();
                                     } else {
                                         tentativasDesafio3False--;
@@ -257,7 +259,7 @@ public class TheAngularStone {
 
             respostaJogador = scanner.next().charAt(0);
             respostaJogador = Character.toLowerCase(respostaJogador);
-            if (ValidaResposta("O dos trabalhadores de primeira linha, que são os que coordenam o trabalho operacional.", respostaJogador, desafio4) == true) {
+            if (ValidaResposta("O dos trabalhadores de primeira linha, que são os que coordenam o trabalho operacional.", respostaJogador, desafio4)) {
 
                 int tentativasDesafio5 = 3;
 
@@ -271,7 +273,7 @@ public class TheAngularStone {
 
                     respostaJogador = scanner.next().charAt(0);
                     respostaJogador = Character.toLowerCase(respostaJogador);
-                    if (ValidaResposta("Administração Científica", respostaJogador, desafio5) == true) {
+                    if (ValidaResposta("Administração Científica", respostaJogador, desafio5)) {
 
                         // SEGUNDO NPC
                         ImprimirMensagem(5);
@@ -289,7 +291,7 @@ public class TheAngularStone {
 
                             respostaJogador = scanner.next().charAt(0);
                             respostaJogador = Character.toLowerCase(respostaJogador);
-                            if (ValidaResposta("Intensificação, economicidade e produtividade.", respostaJogador, desafio6) == true) {
+                            if (ValidaResposta("Intensificação, economicidade e produtividade.", respostaJogador, desafio6)) {
                                 int tentativasDesafio7 = 3;
 
                                 while(tentativasDesafio7 > 0) {
@@ -351,9 +353,9 @@ public class TheAngularStone {
     }
 
     /*
-    * Funcao AdicionarPerguntas
-    *
-    * Cada indice possui uma String que quando invocado passando um inteiro correspondente ao index, retorna o contexto de um desafio/pergunta.
+     * Funcao AdicionarPerguntas
+     *
+     * Cada indice possui uma String que quando invocado passando um inteiro correspondente ao index, retorna o contexto de um desafio/pergunta.
      */
 
     public static void AdicionarPerguntas(int x) {
@@ -442,16 +444,11 @@ public class TheAngularStone {
 
     }
 
-    /*
-     * Funcao ImprimirMensagem
-     *
-     * Cada indice possui uma String que quando invocado passando um inteiro correspondente ao index, retorna um contexto, como PROLOGO, INTRODUCAO e etc.
-     */
-
+    // Passando um index desejado da lista, retorna um contexto.
     public static void ImprimirMensagem(int x) {
         ArrayList<String> textosPadroes = new ArrayList<String>();
 
-        // INTRODUCAO AO PERSONAGEM
+        // INTRODUÇÃO DO PERSONAGEM
         textosPadroes.add("\n\n **INTRODUCAO AO PERSONAGEM**"
                 + "\n\tVocê é um anão que trabalha nas minas de ouro. Porém, você é treinado na arte da"
                 + "\nGuerra pelo exército anão, e sempre foi conhecido pela destreza com o machado, combate"
@@ -459,7 +456,7 @@ public class TheAngularStone {
                 + "\n\tVocê trabalha nas minas pois o exército já tirou muito tempo e paz da sua vida, que"
                 + "\nvocê decide viver em paz ao lado de seus filhos.");
 
-        // PROLOGO
+        // PRÓLOGO
         textosPadroes.add("\n\n **INTRODUCAO DA HISTORIA**"
                 + "\n\tÉ uma bela e pacífica manhã quente de primavera, as crianças brincam nas ruas e"
                 + "\nflorestas, a cidade está agitada. Os adultos estão trabalhando no comércio e você, como a"
@@ -475,13 +472,13 @@ public class TheAngularStone {
                 + "\n\nSim agirei, digite [s] para sim."
                 + "\nNão agirei, digite [n] para nao");
 
-        // INTRODUCAO PRINCIPAL
+        // INTRODUÇÃO PRINCIPAL
         textosPadroes.add("\n\n\tIntrodução: Você se chama Gomnor e vive no reino de Dastarian na terra média, onde"
                 + "\nanões vivem em paz. Porém, depois de 200 anos sem guerra, o Lord Orc Shenpor foi solto"
                 + "\npor um anão mago, e com ele, toda a magia negra do submundo de Ostarion, que é"
                 + "\ndominado por Orcs e criaturas das trevas.");
 
-        // PRIMEIRO NPC APARECE
+        // PRIMEIRO NPC APARECENDO
         textosPadroes.add("\n\tContinuando sua viagem, ao fim da estrada, já quase no reino de Dastarian, você"
                 + "\nencontra um anão guerreiro ferido no braço. Ele está encostado em uma árvore, você para"
                 + "\nobter mais detalhes sobre o que está acontecendo. Ele te explica que você deve seguir pela"
@@ -493,13 +490,13 @@ public class TheAngularStone {
                 + "\n\nSim agirei, digite [s] para sim."
                 + "\nNão agirei, digite [n] para nao");
 
-        // DECISAO DE PERMANENCIA DO NPC
+        // DECISÃO DE PERMANÊNCIA DO NPC
         textosPadroes.add("\n\tVencendo a batalha, você sabe que o anão está ferido. Ele diz:"
                 + "\n\t-Posso ficar para ajuda-lo mais em sua jornada."
                 + "\n\tO que você decide fazer? Permanecer com a ajuda do anão ou dispensá-lo falando"
                 + "\npara que ele vá se cuidar e ficar melhor?"
                 + "\n\nSim, aceitar a ajuda, digite [s] para sim / Não, deixa-lo ir se recuperar, digite [n] para nao");
-        // SEGUNDO NPC
+        // SEGUNDO NPC APARECENDO
         textosPadroes.add("\n\tO conselheiro anão tenta te enganar com uma pista falsa, mas seus conhecimentos "
                 + "\nsão bons e você descobre a farsa, e assim, que ele é um traidor. Por isso, sem ouvir mais e com "
                 + "\nsangue quente de anão, você o apunhala com a adaga no coração. E ao morrer lentamente você diz em seu ouvido:"
@@ -516,14 +513,14 @@ public class TheAngularStone {
     }
 
     /*
-    * Funcao GerarAlternativas
-    *
-    * Quando Invocada, requer 4 Strings como seus parametros.
-    * A Funcao GerarAlternativas tem como papel, obter as 4 Strings que tem como conteudo as alternativas da pergunta em questao,
-    * Adiciona-las a uma ArrayList, e de forma aleatoria fazer uma concatenacao com um vetor que possui como conteudo as letras para as
-    * alternativas.
-    * Por fim, retorna um ArrayList do tipo String.
-    * */
+     * Função GerarAlternativas
+     *
+     * Quando Invocada, requer 4 Strings como parâmetros.
+     * A Funcão GerarAlternativas tem como papel, obter as 4 Strings que possui como conteúdo as alternativas da pergunta em questao,
+     * Adicioná-las a uma ArrayList, e de forma aleatória fazer uma concatenação com um vetor que possui como conteúdo as letras para as
+     * alternativas.
+     * Por fim, retorna um ArrayList do tipo String.
+     * */
 
 
     public static ArrayList<String> GeraAlternativas(String w, String x, String y, String z) {
@@ -553,12 +550,12 @@ public class TheAngularStone {
 
 
     /*
-    * Funcao ValidaRespota
-    *
-    * Tem como papel receber como parametros, uma Sring com a respota certa da pergunta em questao, um char que contem o palpite fornecido
-    * pelo usuario, e a ArrayList que contem todas as alternativas para fazer a comparacao da respota certa com o palpite do usuario.
-    * Por fim, retorna um boolean, true se o palpite do usuario for a certa, false caso o contrario.
-    * */
+     * Função ValidaRespota
+     *
+     * Tem como papel receber como parâmetros, uma String com a respota certa da pergunta em questão, um char que contem o palpite fornecido
+     * pelo usuário, e a ArrayList que contem todas as alternativas para fazer a comparação da respota certa com o palpite do usuário.
+     * Por fim, retorna um boolean, true se o palpite do usuario for correto.
+     * */
 
     public static boolean ValidaResposta(String repostaCerta, char repostaUsuario, ArrayList<String> alternativas){
         boolean resultado = false;
@@ -609,9 +606,9 @@ public class TheAngularStone {
     }
 
     /*
-     * Funcao ImprimeAlternativas
+     * Função ImprimeAlternativas
      *
-     * Tem como papel, fazer a impressaso do conteudo da ArrayList fornecida.
+     * Imprime a lista que for fornecida.
      * */
 
     public static void ImprimeAlternativas(ArrayList<String> listaAlternativas) {
